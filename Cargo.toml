@@ -4,8 +4,15 @@ version = "0.1.0"
 authors = ["Jeff Dickey @jdxcode"]
 description = "collection of helpful utilities"
 license = "ISC"
+repository = "https://github.com/jdxcode/xx"
 
 [dependencies]
 digest = { version = "0.7.6", features = ["std"] }
 sha-1 = "0.7.0"
 sha2 = "0.7.1"
+
+[badges]
+travis-ci = { repository = "jdxcode/xx" }
+is-it-maintained-issue-resolution = { repository = "jdxcode/xx" }
+is-it-maintained-open-issues = { repository = "jdxcode/xx" }
+maintenance = { status = "experimental" }
