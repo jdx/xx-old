@@ -1,11 +1,11 @@
 language: rust
 cache: cargo
-rust:
-  - stable
-  - nightly
-  - beta
 matrix:
   allow_failures:
+    - rust: nightly
+  include:
+    - rust: stable
+  include:
     - rust: nightly
   include:
     - rust: beta
