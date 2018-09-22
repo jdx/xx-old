@@ -10,6 +10,7 @@ repository = "https://github.com/jdxcode/xx"
 digest = { version = "0.7.6", features = ["std"] }
 sha-1 = "0.7.0"
 sha2 = "0.7.1"
+base64 = "0.9.3"
 
 [badges]
 travis-ci = { repository = "jdxcode/xx" }
