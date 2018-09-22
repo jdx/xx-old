@@ -1,0 +1,10 @@
+[package]
+name = "xx"
+version = "0.1.0"
+authors = ["Jeff Dickey @jdxcode"]
+description = "collection of helpful utilities"
+
+[dependencies]
+digest = { version = "0.7.6", features = ["std"] }
+sha-1 = "0.7.0"
+sha2 = "0.7.1"
