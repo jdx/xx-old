@@ -1,6 +1,6 @@
 [package]
 name = "xx"
-version = "0.1.4-alpha.0"
+version = "0.1.4"
 authors = ["Jeff Dickey @jdxcode"]
 description = "collection of helpful utilities"
 license = "ISC"
