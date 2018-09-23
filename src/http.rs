@@ -20,9 +20,7 @@ pub enum DownloadError {
 ///
 /// fn main() -> Result<(), xx::http::DownloadError> {
 ///     xx::http::download("https://jsonplaceholder.typicode.com/todos/1", "tmp/todo.json")?;
-///     let mut f = File::open("tmp/todo.json").expect("file not found");
-///     let mut contents = String::new();
-///     f.read_to_string(&mut contents).expect("something went wrong reading the file");
+///     let contents = xx::fs::read_file("tmp/todo.json").expect("error reading file");
 ///     assert_eq!(contents, r#"{
 ///   "userId": 1,
 ///   "id": 1,
