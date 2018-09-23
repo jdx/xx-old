@@ -34,7 +34,7 @@ impl fmt::LowerHex for Digest {
 /// ```
 pub fn decode_hex(input: &str) -> Result<String, DecodeError> {
     let output = Digest(base64::decode(input)?);
-    Ok(format!("{:x}", output))
+    Ok(format!("{:02x}", output))
 }
 
 /// Decode base64 string to string
