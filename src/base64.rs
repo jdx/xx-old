@@ -2,6 +2,7 @@ extern crate base64;
 
 pub use self::base64::DecodeError;
 use std::fmt;
+use std::convert::AsRef;
 use std::string;
 
 struct Digest(Vec<u8>);
@@ -32,7 +33,8 @@ impl fmt::LowerHex for Digest {
 ///     Ok(())
 /// }
 /// ```
-pub fn decode_hex(input: &str) -> Result<String, DecodeError> {
+pub fn decode_hex<A: AsRef<str>>(_input: A) -> Result<String, DecodeError> {
+    let input = _input.as_ref();
     let output = Digest(base64::decode(input)?);
     Ok(format!("{:02x}", output))
 }
@@ -48,7 +50,8 @@ pub fn decode_hex(input: &str) -> Result<String, DecodeError> {
 ///     Ok(())
 /// }
 /// ```
-pub fn decode(input: &str) -> Result<String, Base64Error> {
+pub fn decode<A: AsRef<str>>(_input: A) -> Result<String, Base64Error> {
+    let input = _input.as_ref();
     let bytes = base64::decode(input).map_err(Base64Error::Decode)?;
     let output = String::from_utf8(bytes).map_err(Base64Error::Utf8)?;
     Ok(output)
