@@ -4,9 +4,10 @@ extern crate sha2;
 
 use self::sha1::{Digest, Sha1};
 use self::sha2::{Sha256, Sha512};
+use std::convert::AsRef;
 use std::fs;
 use std::io;
-use std::convert::AsRef;
+use std::path::Path;
 
 /// Compute the hash of file using SHA-1
 ///
@@ -21,7 +22,7 @@ use std::convert::AsRef;
 ///     Ok(())
 /// }
 /// ```
-pub fn file_sha1<F: AsRef<str>>(f: F) -> Result<String, io::Error> {
+pub fn file_sha1<F: AsRef<Path>>(f: F) -> Result<String, io::Error> {
     let mut file = fs::File::open(f.as_ref())?;
     let hash = Sha1::digest_reader(&mut file)?;
     // println!("{:?} {:x}", f, hash);
@@ -41,7 +42,7 @@ pub fn file_sha1<F: AsRef<str>>(f: F) -> Result<String, io::Error> {
 ///     Ok(())
 /// }
 /// ```
-pub fn file_sha256<F: AsRef<str>>(f: F) -> Result<String, io::Error> {
+pub fn file_sha256<F: AsRef<Path>>(f: F) -> Result<String, io::Error> {
     let mut file = fs::File::open(f.as_ref())?;
     let hash = Sha256::digest_reader(&mut file)?;
     // println!("{:?} {:x}", f, hash);
@@ -61,7 +62,7 @@ pub fn file_sha256<F: AsRef<str>>(f: F) -> Result<String, io::Error> {
 ///     Ok(())
 /// }
 /// ```
-pub fn file_sha512<F: AsRef<str>>(f: F) -> Result<String, io::Error> {
+pub fn file_sha512<F: AsRef<Path>>(f: F) -> Result<String, io::Error> {
     let mut file = fs::File::open(f.as_ref())?;
     let hash = Sha512::digest_reader(&mut file)?;
     // println!("{:?} {:x}", f, hash);
