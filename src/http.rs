@@ -21,12 +21,7 @@ pub enum DownloadError {
 /// fn main() -> Result<(), xx::http::DownloadError> {
 ///     xx::http::download("https://jsonplaceholder.typicode.com/todos/1", "tmp/todo.json")?;
 ///     let contents = xx::fs::read_file("tmp/todo.json").expect("error reading file");
-///     assert_eq!(contents, r#"{
-///   "userId": 1,
-///   "id": 1,
-///   "title": "delectus aut autem",
-///   "completed": false
-///}"#);
+///     assert_eq!(contents, "{\n  \"userId\": 1,\n  \"id\": 1,\n  \"title\": \"delectus aut autem\",\n  \"completed\": false\n}");
 ///     Ok(())
 /// }
 /// ```
